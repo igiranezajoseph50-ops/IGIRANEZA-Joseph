@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LEGACIA'S YOUTUBE</title>
+  <style>
+    
+    body {
+      margin: 0;
+      color: white;
+      background-color: black ;
+      font-family: Roboto, Arial, sans-serif;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    
+    .youtube-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    .left-section .logo {
+      height: 30px;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    .left-section {
+      display: flex;
+      flex-direction: row;
+      gap:25px
+    }
+
+    .center-section {
+      display: flex;
+      flex: 1;
+      max-width: 600px;
+      max-height: 50px;
+      margin: 0 20px;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 20px 0 0 20px;
+      font-size: 16px;
+      background-color: transparent;
+      color: aqua;
+    }
+
+    .search-button {
+      
+      border: 1px solid #ccc;
+      border-left: 1px solid white;
+      border-radius: 0 20px 20px 0;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 18px;
+      color: white;
+      background-color: transparent;
+      max-width: 60px;
+      
+      
+  
+      
+    }
+
+    .right-section {
+      display: flex;
+
+      align-items: center;
+      gap: 16px;
+      margin-left: 40px;
+      margin-right: 20px;
+      gap: 40px;
+
+    }
+
+    .icon-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      color: white;
+    }
+
+    .avatar {
+      width: 50px;
+      
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    
+    .sidebar {
+      width: 240px;
+      background-color: black;
+      height: 800px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 60px;
+      overflow-y: auto;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      padding: 12px 24px;
+    }
+
+    .sidebar li a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+
+    .sidebar li a:hover {
+      background-color: rgb(96, 96, 96);
+    }
+
+    
+    .above-buttons {
+      position: fixed;
+      top: 70px;
+      left: 240px;
+      right: 0;
+      height: 40px;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding-left: 20px;
+      z-index: 900;
+      overflow-x: auto;
+    }
+
+    .above-buttons button {
+      background-color: rgb(96, 96, 96);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 6px 12px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .above-buttons .all {
+      background-color: white;
+      color: black;
+    }
+
+    
+    .collector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 120px 20px 20px 270px;
+      
+    }
+
+    .sample {
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .my-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    .channel-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .words {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .video-author, .video-google {
+      font-size: 12px;
+      color: rgb(160, 160, 160);
+    }
+    .sign-in {
+      color: blue;
+
+    }
+    .person {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid green;
+    background-color: transparent;
+    color: blue;
+    font-size: 15px;
+
+    }
+    
+    
+    
+    .search {
+     width: 30px;
+     justify-content: center;
+
+
+    }
+    .voice {
+      width: 45px;
+      
+      margin-left: 0;
+    }
+    .create {
+      width: 40px
+    }
+    .plus {
+      display: flex;
+      flex-direction: row;
+      background-color: #0C0C0C;
+
+    }
+    .me {
+      width: 40px;
+    }
+    
+
+    .te {
+      margin-top: 10px;
+    }
+    .menu {
+      width: 40px
+    }
+    .kids {
+      width: 35px;
+
+    }
+    .down {
+      margin-bottom: 30px;
+      color: blue;
+    }
+    .show {
+      margin-left: 10px;
+    
+    }
+    .sign {
+      margin-left: 5px;
+    }
+    .see {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  
+  </style>
+</head>
+<body>
+
+  
+  <header class="youtube-header">
+    <div class="left-section">
+      <img class="menu" src="menus.png" alt="humberger">
+      <img src="youtube.png" alt="YouTube Logo" class="logo">
+      <p class="see">YOUTUBE</p>
+    </div>
+    
+    <div class="center-section">
+      <input type="text" placeholder="Search" class="search-input">
+      <button class="search-button"><img class="search" src="glass.png" alt="youtube"></button>
+      <button class="icon-button"><img class="voice" src="voice.png" alt="voice" >  </button> 
+
+    </div>
+    <div class="right-section">
+      
+      <div class="plus">
+      <button class="icon-button"><img class="create" src="play.png" alt="create"> </button>
+      <p class="te">create</p>
+      </div>
+      <img src="notify.png" alt="User Avatar" class="avatar">
+      <img class="me" src="letter-i.png" alt="iam">
+    </div>
+  </header>
+
+  
+  <nav class="sidebar">
+    <ul>
+      
+      <li><a href="#"><img src="home.png" alt="image"> Home</a></li>
+      <li><a href="#"><img src="short.png" alt="image">Shorts</a></li>
+      <li><a href="#"><img src="suscription.png" alt="image">Subscriptions</a></li>
+      <hr>
+      <li><a href="#">You<img src="next.png" alt="image"></a></li>
+      <li><a href="#"><img src="history.png" alt="image">History</a></li>
+      <li><a href="#"><img src="playlist.png" alt="image">Playlist</a></li>
+      <li><a href="#"><img src="watch.png" alt="image">Watch later</a></li>
+      <li><a href="#"><img src="thumb.png" alt="image">Liked videos</a></li>
+
+      <hr>
+      <li class="sign-in">Sign in to like videos, comment, and subscribe.</li>
+      <li><button class="person"><img src="sign.png" alt="sign"><span class="sign">Sign in</span> </button></li>
+      <hr>
+      <li>Explore</li>
+      <li><a href="#"><img src="music.png" alt="image">Music</a></li>
+      <li><a href="#"><img src="live.png" alt="image">live</a></li>
+      <li><a href="#"><img src="game.png" alt="image">Gaming</a></li>
+      <li><a href="#"><img src="new.png" alt="image">News</a></li>
+      
+      <li><a href="#"><img src="sport.png" alt="image">Sports</a></li>
+      <li><a href="#"><img src="learn.png" alt="image">Learning</a></li>
+      <li><a href="#"><img src="fashion.png" alt="image">Fashion & Beauty</a></li>
+      <hr>
+      <li>More from YouTube</li>
+      <li><img class="kids" src="youtube-kids.png" alt="image"><span class="show">Youtube for kids</span></li>
+      <hr>
+      <li><img src="settings.png" alt="image">Settings</li>
+      <li><img src="report.png" alt="image">report History</li>
+      <li><img src="help.png" alt="image">Help</li>
+      <li><img src="feed.png" alt="image">send feedback</li>
+      <hr>
+      <li class="down">AboutPressCopyrightContact usCreatorsAdvertiseDevelopers
+TermsPrivacyPolicy & SafetyHow YouTube worksTest new features</li>
+      
+      <li><footer > 2025 Google LLC</footer></li>
+      
+    </ul>
+  </nav>
+
+  
+  <div class="above-buttons">
+    <button class="all">All</button>
+    <button>Music</button>
+    <button>Playlist</button>
+    <button>Worship</button>
+    <button>News</button>
+    <button>Mixes</button>
+    <button>Podcast</button>
+    <button>Live</button>
+    <button>Radio</button>
+    <button>Public Speaking</button>
+  </div>
+
+  
+  <div class="collector">
+    
+    <div class="sample">
+      <a href="video.html">
+      <img class="my-image" src="https://i.ytimg.com/vi/8jRpsLT3wCE/hq720.jpg" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="first image.avif" alt="Channel">
+        <div class="words">
+          <p>Thank You Lord - Special Hillsong Worship Songs Playlist 2025</p>
+          <p class="video-author">Latest Worship Music</p>
+          <p class="video-google">2.8M views • 4 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (2).html">
+      <img class="my-image" src="https://i.ytimg.com/vi/aX_32le4DHs/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLAc2uUiuJaL0ZBfy59zQk7Q1tO5YA" alt="Thumbnail" >
+      </a>
+      <div class="content">
+        <img class="channel-image" src="natureone.avif" alt="Channel">
+        <div class="words">
+          <p>Best Worship Songs Collection - 2025 Edition</p>
+          <p class="video-author">Praise Team Official</p>
+          <p class="video-google">1.5M views • 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (3).html">
+      <img class="my-image" src="https://i.ytimg.com/vi/hzR3qPMTQzQ/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLA0fsg6xCbdriPxOMW47vMxhCGXZw" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="papi.avif" alt="Channel">
+        <div class="words">
+          <p>Top Gospel Hits 2025 - Uplifting Worship Songs</p>
+          <p class="video-author">Spirit Praise</p>
+          <p class="video-google">3.2M views • 1 month ago</p>
+        </div>
+      </div>
+    </div>
+      
+    <div class="sample">
+      <a href="video (4).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/CCIesa1k1Qc/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLAzXLUtYcI3JUC6PnzY_QfMfY-yEA" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="first image.avif" alt="Channel">
+        <div class="words">
+          <p>Thank You Lord - Special Hillsong Worship Songs Playlist 2025</p>
+          <p class="video-author">Latest Worship Music</p>
+          <p class="video-google">2.8M views • 4 months ago</p>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="sample">
+      <a href="video (5).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/XQrlkmTygjw/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLAl7FEopeMVch17iHeGacYXcC6www" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="super.jpg" alt="Channel">
+        <div class="words">
+          <p>Best Worship Songs Collection - 2025 Edition</p>
+          <p class="video-author">Praise Team Official</p>
+          <p class="video-google">1.5M views • 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (6).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/UmSKNLDd2CI/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLAWoRtCUwCVH3dzeMjRnaFkT48j9w" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="natureone.avif" alt="Channel">
+        <div class="words">
+          <p>Top Gospel Hits 2025 - Uplifting Worship Songs</p>
+          <p class="video-author">Spirit Praise</p>
+          <p class="video-google">3.2M views • 1 month ago</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="sample">
+      <a href="video (7).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/pCEQRiwZLk4/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLBAlEQPYxtErATcG-PuZf44FTSJmw" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="first image.avif" alt="Channel">
+        <div class="words">
+          <p>Thank You Lord - Special Hillsong Worship Songs Playlist 2025</p>
+          <p class="video-author">Latest Worship Music</p>
+          <p class="video-google">2.8M views • 4 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (8).html">
+      <img class="my-image" src="https://i.ytimg.com/vi/M_rH3Z_R6-U/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLCVpLB1e5paMxBpSlgaUHgYKZ7a2A" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="super.jpg" alt="Channel">
+        <div class="words">
+          <p>Best Worship Songs Collection - 2025 Edition</p>
+          <p class="video-author">Praise Team Official</p>
+          <p class="video-google">1.5M views • 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (9).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/1ybTiOVDhLQ/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLBnyw1TsBSxfQBEdMOf87jyFegO7w" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="natureone.avif" alt="Channel">
+        <div class="words">
+          <p>Top Gospel Hits 2025 - Uplifting Worship Songs</p>
+          <p class="video-author">Spirit Praise</p>
+          <p class="video-google">3.2M views • 1 month ago</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="sample">
+      <a href="video (10).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/ZawJmHmgZEg/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLC2QM_VYmtcA5lGKjdprGM-3fnpaA" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="natureone.avif" alt="Channel">
+        <div class="words">
+          <p>Thank You Lord - Special Hillsong Worship Songs Playlist 2025</p>
+          <p class="video-author">Latest Worship Music</p>
+          <p class="video-google">2.8M views • 4 months ago</p>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="sample">
+      <a href="video (11).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/i_sUAKwjMM0/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLB8j3CoF2sdNXexgxA-c6iNP3QoJw" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="natureone.avif" alt="Channel">
+        <div class="words">
+          <p>Best Worship Songs Collection - 2025 Edition</p>
+          <p class="video-author">Praise Team Official</p>
+          <p class="video-google">1.5M views • 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (12).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/tNNeQuq05F8/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLBAVgjJ8k6Q9vwksUfcJRCkv1Wxyg" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="natureone.avif" alt="Channel">
+        <div class="words">
+          <p>Top Gospel Hits 2025 - Uplifting Worship Songs</p>
+          <p class="video-author">Spirit Praise</p>
+          <p class="video-google">3.2M views • 1 month ago</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="sample">
+      <a href="video (13).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/UyO6A5E11Bw/hqdefault.jpg?s…BACGAY4AUAB&rs=AOn4CLDLFtesJ8ExO0JfY8LoanwbWIHEBA" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="natureone.avif" alt="Channel">
+        <div class="words">
+          <p>Thank You Lord - Special Hillsong Worship Songs Playlist 2025</p>
+          <p class="video-author">Latest Worship Music</p>
+          <p class="video-google">2.8M views • 4 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (14).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/jUn-o524bVQ/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLBtjmKM9C_pLcn9EAxzfD5uA-bznQ" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="natureone.avif" alt="Channel">
+        <div class="words">
+          <p>Thank You Lord - Special Hillsong Worship Songs Playlist 2025</p>
+          <p class="video-author">Praise Team Official</p>
+          <p class="video-google">1.5M views • 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (15).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/LEtB_xfIyb8/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLCaM5TO-kseMaylnwPOL-Q4v1BPJQ" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="natureone.avif" alt="Channel">
+        <div class="words">
+          <p>Thank You Lord - Special Hillsong Worship Songs Playlist 2025 </p>
+          <p class="video-author">Spirit Praise</p>
+          <p class="video-google">3.2M views • 1 month ago</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="sample">
+      <a href="video (16).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/Yc7OFTVjOJg/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLCyyejNsAX17kiJTLJuVLU5WuYNUQ" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Latest Worship Music</p>
+          <p class="video-google">2.8M views • 4 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (17).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/0s8ry-22gjA/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLBgz4NNQXgeT2s-kiwLA4JDTkkOXA" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025 </p>
+          <p class="video-author">Praise Team Official</p>
+          <p class="video-google">1.5M views • 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (18).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/gYHZOJchM1U/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLB7cZUW4irlnj22A2i66jKnoAcDIg" alt="Thumbnail">
+     </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Spirit Praise</p>
+          <p class="video-google">3.2M views • 1 month ago</p>
+        </div>
+      </div>
+    </div>
+
+   <div class="sample">
+    <a href="video (19).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/rUM245Ulgdg/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLC8iR0rD6KpjyebdVDzxaJpOu98xw" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Latest Worship Music</p>
+          <p class="video-google">2.8M views • 4 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (20).html">
+      <img class="my-image" src="https://i.ytimg.com/vi/Y2rheFGGO7k/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLAdkUYi-14UF0Sf6YlrtZmev9N97g" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Praise Team Official</p>
+          <p class="video-google">1.5M views • 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (21).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/M8To7iorkxQ/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLABEOdYypbBKnNAfxpKkcWZsCkiYw" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Spirit Praise</p>
+          <p class="video-google">3.2M views • 1 month ago</p>
+        </div>
+      </div>
+    </div>
+ <div class="sample">
+  <a href="video (22).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/B_JEoOYbEgQ/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLDi1dGIVArcU6bMGE1wXZ9uKBdi5g" alt="Thumbnail">
+     </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Latest Worship Music</p>
+          <p class="video-google">2.8M views • 4 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (23).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/RUhfTpUQ8eo/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLAETn4D5u0bPpfzZ4_B8snYkFor9Q" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Praise Team Official</p>
+          <p class="video-google">1.5M views • 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (24).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/xRfwXBitjc8/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLDU-EWNQCc2SVkHRfXA5glQ4IEq0g" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Spirit Praise</p>
+          <p class="video-google">3.2M views • 1 month ago</p>
+        </div>
+      </div>
+    </div>
+     <div class="sample">
+      <a href="video (25).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/vlVlOjHkxl4/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLCmEJ2cyHoiq8Ro36bnC--rbUDH0A" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Latest Worship Music</p>
+          <p class="video-google">2.8M views • 4 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (26).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/xa1w6KTSkNQ/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLBNy_Ao7jT8Yue8zi38bkKvvZ-4Zg" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Praise Team Official</p>
+          <p class="video-google">1.5M views • 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (27).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/IxTkpDdlDVM/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLDgue6tns2tzP8mRuHztjKwfiQ7bA" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Spirit Praise</p>
+          <p class="video-google">3.2M views • 1 month ago</p>
+        </div>
+      </div>
+    </div>
+ <div class="sample">
+  <a href="video (28).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/Vo1ksV1Qa1w/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLAcHo2a3h1AcLuRAxxLJOViIgnt7g" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Latest Worship Music</p>
+          <p class="video-google">2.8M views • 4 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (29).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/KO498_Qtv90/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLCrfRHjRLCJfrir5Mz8ql0W0fFRMg" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Praise Team Official</p>
+          <p class="video-google">1.5M views • 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sample">
+      <a href="video (30).html">
+      <img class="my-image" src="	https://i.ytimg.com/vi/a_oIaM-zJgY/hq720.jpg?sqp=-…BACGAY4AUAB&rs=AOn4CLA3OGx2QuI2gMD58aeLPo7BthnyhQ" alt="Thumbnail">
+      </a>
+      <div class="content">
+        <img class="channel-image" src="movie.jpg" alt="Channel">
+        <div class="words">
+          <p>Powerful Action Movie -2025</p>
+          <p class="video-author">Spirit Praise</p>
+          <p class="video-google">3.2M views • 1 month ago</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
