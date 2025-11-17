@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  .buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 0; 
+  row-gap: 10px;  
+  padding: 0;
+  height: 500px;
+  width: 500px; 
+  border: none;
+  border-radius: 30px;
+  border-top: 20px solid black;
+  border-bottom: 10px solid black;
+}
+
+button {
+  width: 50px; 
+  border: none;
+  border-radius: 7px;
+  box-sizing: border-box; 
+  margin-left: 40px;
+  background-color: aqua;
+  border-top: 5px solid blue;
+  transition: background 0.8s ease;
+  
+  
+}
+.container {
+  border: 30px solid black;
+  width: 500px;
+  height:700px;
+  border-radius: 30px;
+  background-color: skyblue;
+  
+}
+.input {
+  width: 450px;
+  height: 80px;
+  justify-content: center;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom:30px;
+  border-radius:20px;
+  font-size: 40px;
+  color: black;
+  background-color:  bisque;
+}
+.soup {
+  color: red;
+}
+.power {
+  font-size: 20px;
+  color: chocolate;
+  text-align: center; 
+}
+button:hover {
+  background-color: orange;
+}
+
+ #clear {
+      background-color: #ff4d4d;
+      color: white;
+    }
+    #clear:hover {
+      background-color: #e60000;
+    }
+    #equals {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #equals:hover {
+      background-color: #45a049;
+    }
+    </style>
+</head>
+<body>
+ <h1>CALCULATOR</h1>
+ <div class="container">
+ <input class="input" type="text" id="display" />
+ <div class="buttons">
+  
+ <button>sin</button><button>cos</button><button>tan</button><button>2ndf</button>   
+ <button>CE</button><button>X^-1</button><button>%</button><button>/</button>   
+ <button>7</button><button>8</button><button>9</button><button>*</button>  
+ <button>4</button><button>5</button><button>6</button><button>-</button>   
+ <button>1</button><button>2</button><button>3</button><button>+</button>   
+ <button>0</button><button>.</button><button>+/-</button><button id="equals">=</button>   
+ <button>TT</button><button>X^y</button><button>R2</button ><button id="clear">C</button>   
+     
+  </div>
+  <p class="power">Powered by the calculator's <span class="soup">SOUP</span></p>
+</div>
+ <script>
+  
+   const display = document.getElementById('display');
+   const buttons = document.querySelectorAll('.buttons button');
+  
+
+  
+  
+   buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const value = button.textContent;
+        if (value === '=') {
+          try {
+            display.value = eval(display.value);
+          } catch {
+            display.value = 'Error';
+          }
+        } else if (value === 'C') {
+          display.value = '';
+        } else {
+          display.value += value;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
